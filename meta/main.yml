@@ -1,0 +1,20 @@
+---
+galaxy_info:
+  author: t1
+  description: Provision JEE application servers (currently just Wildfly)
+  license: Apache
+  min_ansible_version: 2.8
+
+  platforms:
+    - name: CentOS
+      versions:
+        - all
+
+  galaxy_tags:
+    - jee
+    - javaee
+    - jakartaee
+    - appserver
+    - java
+
+dependencies: []
