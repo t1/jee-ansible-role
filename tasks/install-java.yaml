@@ -1,0 +1,4 @@
+- name: install java
+  apt:
+    pkg: 'openjdk-{{ java_version }}-jre-headless'
+  become: true

@@ -1,0 +1,47 @@
+- name: create /etc/wildfly
+  file:
+    state: directory
+    name: /etc/wildfly
+  become: true
+
+- name: copy wildfly.conf file
+  copy:
+    remote_src: yes
+    src: '{{ application_server_systemd_scripts }}/wildfly.conf'
+    dest: /etc/wildfly/
+  become: true
+
+- name: copy launch.sh
+  copy:
+    remote_src: yes
+    src: '{{ application_server_systemd_scripts }}/launch.sh'
+    dest: '{{ application_server_home }}/bin/'
+    owner: '{{ application_server_user }}'
+    group: '{{ application_server_group }}'
+    mode: '0750'
+  become: true
+
+- name: copy service
+  copy:
+    remote_src: yes
+    src: '{{ application_server_systemd_scripts }}/wildfly.service'
+    dest: /etc/systemd/system/
+  become: true
+
+- name: systemd reload
+  systemd:
+    daemon_reload: yes
+  become: true
+
+- name: start app server
+  service:
+    name: wildfly
+    state: started
+    enabled: yes
+  become: true
+
+#- name: wait for app server to start
+#  wait_for:
+#    path: '{{ application_server_log }}'
+#    search_regex: '{{ application_server_started_log_expression }}'
+#  become: true

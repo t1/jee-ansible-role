@@ -1,0 +1,15 @@
+- name: create application server group
+  group:
+    name: '{{ application_server_group }}'
+    state: present
+  become: true
+
+- name: create application server user
+  user:
+    name: '{{ application_server_user }}'
+    group: '{{ application_server_group }}'
+    home: '{{ application_server_home }}'
+    create_home: no # will be a symlink
+    shell: /sbin/nologin
+    state: present
+  become: true

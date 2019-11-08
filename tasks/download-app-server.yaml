@@ -1,0 +1,26 @@
+- name: download app server
+  get_url:
+    url: '{{ application_server_download_url }}'
+    dest: /opt
+    checksum: '{{ application_server_archive_checksum }}'
+#      when: no
+  become: true
+
+- name: unpack app server
+  unarchive:
+    remote_src: yes
+    src: /opt/{{ application_server_archive }}
+    dest: '/opt'
+    owner: '{{ application_server_user }}'
+    group: '{{ application_server_group }}'
+    creates: '{{ application_server_start_script }}'
+  become: true
+
+- name: link app server home
+  file:
+    state: link
+    src: '/opt/{{ application_server_archive_expanded }}'
+    name: '{{ application_server_home }}'
+    owner: '{{ application_server_user }}'
+    group: '{{ application_server_group }}'
+  become: true
