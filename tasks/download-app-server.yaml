@@ -1,9 +1,16 @@
+- name: get status of /opt/{{ application_server_archive }}
+  stat:
+    path: /opt/{{ application_server_archive }}
+  register: download_file
+
 - name: download app server
   get_url:
     url: '{{ application_server_download_url }}'
     dest: /opt
     checksum: '{{ application_server_archive_checksum }}'
-#      when: no
+  # testing the checksum is very slow or does it work at all?
+  # this additional check works better as a new file is a new file-name
+  when: not download_file.stat.exists
   become: true
 
 - name: unpack app server

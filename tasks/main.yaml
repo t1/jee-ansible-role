@@ -1,5 +1,6 @@
 ---
 # tasks file for jee-ansible-role
+#- debug: var=ansible_facts
 - include: install-java.yaml
 - include: create-roles.yaml
 - include: download-app-server.yaml

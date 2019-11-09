@@ -1,0 +1,12 @@
+---
+- name: Converge
+  hosts: all
+  roles:
+    - role: jee-ansible-role
+
+  post_tasks:
+    - name: dump variables
+      template:
+        src: templates/ansible-vars.yaml.j2
+        dest: /tmp/ansible-vars.yaml
+      changed_when: False
