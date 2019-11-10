@@ -1,21 +1,14 @@
 ---
+sudo: required
 language: python
-python: "2.7"
 
-sudo: false # Use the new container infrastructure
-
-addons:
-  apt:
-    packages:
-      - python-pip
+services:
+  - docker
 
 install:
-  - pip install ansible
-  - ansible --version
-  - printf '[defaults]\nroles_path=../' >ansible.cfg
+  - pip install molecule
+  - pip install docker-py
 
 script:
-  - ansible-playbook tests/test.yml -i tests/inventory --syntax-check
-
-notifications:
-  webhooks: https://galaxy.ansible.com/api/v1/notifications/
+  - cd docker
+  - molecule test
