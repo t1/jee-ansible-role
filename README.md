@@ -1,5 +1,5 @@
-JEE
-===
+JEE-app-server
+==============
 
 [Ansible](https://docs.ansible.com/ansible/latest/index.html) role to provision a [Jakarta-EE](https://jakarta.ee) application server:
 

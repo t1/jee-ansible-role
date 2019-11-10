@@ -1,5 +1,6 @@
 ---
 galaxy_info:
+  role_name: jee_app_server
   author: t1
   description: Provision JEE application servers (currently just Wildfly)
   license: Apache
