@@ -1,4 +1,11 @@
-- name: install java
-  package:
-    name: 'openjdk-{{ java_version }}-jre-headless'
+- name: install java with apt
+  apt:
+    pkg: '{{ java_package_apt }}'
   become: true
+  when: ansible_pkg_mgr == 'apt'
+
+- name: install java with yum
+  yum:
+    pkg: '{{ java_package_yum }}'
+  become: true
+  when: ansible_pkg_mgr == 'yum'

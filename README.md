@@ -1,50 +1,31 @@
 JEE
 ===
 
-[Ansible](https://docs.ansible.com/ansible/latest/index.html) role to provision [Jakarta-EE](https://jakarta.ee) application servers:
+[Ansible](https://docs.ansible.com/ansible/latest/index.html) role to provision a [Jakarta-EE](https://jakarta.ee) application server:
 
 * [Wildfly](https://wildfly.org)
 
-Requirements
-------------
+Supports Ubuntu and CentOS. Other distributions may work, too, if they run services with `systemd`.
 
-Any pre-requisites that may not be covered by Ansible itself or the role should
-be mentioned here. For instance, if the role uses the EC2 module, it may be a
-good idea to mention in this section that the boto package is required.
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including
-any variables that are in defaults/main.yml, vars/main.yml, and any variables
-that can/should be set via parameters to the role. Any variables that are read
-from other roles and/or the global scope (ie. hostvars, group vars, etc.) should
-be mentioned here as well.
-
-Dependencies
-------------
-
-A list of other roles hosted on Galaxy should go here, plus any details in
-regards to parameters that may need to be set for other roles, or variables that
-are used from other roles.
+| var                       | description | default |
+| ------------------------- | ----------- | ------- |
+| java_version              | What OpenJDK version to use | 11 |
+| wildfly_version           | What version of WildFly to use | 18.0.0.Final |
+| wildfly_archive_checksum  | The checksum of the WildFly archive | sha1:2d4778b14fda6257458a26943ea82988e3ae6a66 |
+| wildfly_download_base_url | In case you need a different source for the WildFly archive | http://download.jboss.org/wildfly |
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables
-passed in as parameters) is always nice for users too:
-
-    - hosts: servers
+    - hosts: workers
       roles:
-         - { role: jee-ansible-role, x: 42 }
+         - { role: jee-ansible-role, java_version: 13 }
 
 License
 -------
 
-BSD
-
-Author Information
-------------------
-
-An optional section for the role authors to include contact information, or a
-website (HTML is not allowed).
+Apache 2.0

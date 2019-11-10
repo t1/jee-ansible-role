@@ -5,21 +5,3 @@ java_version: 11
 wildfly_version: 18.0.0.Final
 wildfly_archive_checksum: sha1:2d4778b14fda6257458a26943ea82988e3ae6a66
 wildfly_download_base_url: http://download.jboss.org/wildfly
-
-application_server_home: /opt/wildfly
-application_server_user: wildfly
-application_server_group: wildfly
-application_server_service_name: wildfly
-
-# derived variables:
-application_server_archive_expanded: 'wildfly-{{ wildfly_version }}'
-application_server_archive: '{{ application_server_archive_expanded }}.tar.gz'
-application_server_download_url:
-  '{{ wildfly_download_base_url }}/{{ wildfly_version }}/{{ application_server_archive }}'
-application_server_archive_checksum: '{{ wildfly_archive_checksum }}'
-application_server_start_script: '{{ application_server_home }}/bin/standalone.sh'
-application_server_log: '{{ application_server_home }}/standalone/log/server.log'
-application_server_started_log_expression: 'WildFly Full {{ wildfly_version }} .* started in \d+ms'
-
-application_server_scripts: '{{ application_server_home }}/docs/contrib/scripts'
-application_server_systemd_scripts: '{{ application_server_scripts }}/systemd'

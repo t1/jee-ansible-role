@@ -8,6 +8,8 @@ galaxy_info:
   platforms:
     - name: Ubuntu
       versions: [ all ]
+    - name: CentOS
+      versions: [ all ]
 
   galaxy_tags:
     - jee

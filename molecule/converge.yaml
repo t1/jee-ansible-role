@@ -5,7 +5,7 @@
     - role: jee-ansible-role
 
   post_tasks:
-    - name: dump variables
+    - name: dump variables for test scripts to read
       template:
         src: templates/ansible-vars.yaml.j2
         dest: /tmp/ansible-vars.yaml

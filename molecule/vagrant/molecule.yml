@@ -9,8 +9,12 @@ driver:
   provider:
     name: virtualbox
 platforms:
-  - name: vagrant-ubuntu
-    box: ubuntu/bionic64
+  - name: jee-molecule-ubuntu-18.04
+    box: ubuntu/bionic64 # 18.04
+    memory: 512
+    cpus: 1
+  - name: jee-molecule-centos-7
+    box: centos/7
     memory: 512
     cpus: 1
 lint:
