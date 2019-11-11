@@ -1,4 +1,6 @@
 ---
+scenario:
+  name: docker
 dependency:
   name: galaxy
 driver:

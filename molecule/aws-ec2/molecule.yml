@@ -1,24 +1,18 @@
 ---
 scenario:
-  name: vagrant
+  name: aws-ec2
 dependency:
   name: galaxy
 driver:
-  name: vagrant
-  provider:
-    name: virtualbox
+  name: ec2
 lint:
   name: yamllint
 
 platforms:
-  - name: jee-molecule-ubuntu-18.04
-    box: ubuntu/bionic64 # 18.04
-    memory: 512
-    cpus: 1
-  - name: jee-molecule-centos-7
-    box: centos/7
-    memory: 512
-    cpus: 1
+  - name: jee-molecule-aws-ec2
+    image: ami-080d06f90eb293a27 # Canonical Ubuntu 18.04 LTS bionic EBS
+    instance_type: t2.micro
+    vpc_subnet_id: subnet-eab308a7 # eu-central-1c. see `aws ec2 describe-subnets`
 
 provisioner:
   name: ansible

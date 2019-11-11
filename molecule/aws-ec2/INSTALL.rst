@@ -1,11 +1,12 @@
-********************************
-Docker driver installation guide
-********************************
+*********************************************
+Amazon Web Services driver installation guide
+*********************************************
 
 Requirements
 ============
 
-* Docker Engine
+* An AWS credentials rc file
+* `export EC2_REGION=eu-central-1` or whatever region you use
 
 Install
 =======
@@ -17,4 +18,4 @@ Please refer to the `Virtual environment`_ documentation for installation best p
 
 .. code-block:: bash
 
-    $ pip install 'molecule[docker]'
+    $ pip install 'molecule[ec2]'
