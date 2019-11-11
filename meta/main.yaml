@@ -10,7 +10,7 @@ galaxy_info:
     - name: Ubuntu
       versions: [ all ]
     - name: CentOS
-      versions: [ all ]
+      versions: [ 6, 7, 8 ]
 
   galaxy_tags:
     - jee
