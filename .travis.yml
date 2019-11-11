@@ -3,15 +3,14 @@ sudo: required
 language: python
 
 services:
-  - docker
+- docker
 
 install:
-  - pip install molecule
-  - pip install docker-py
+- pip install molecule
+- pip install docker-py
 
 script:
-  - cd docker
-  - molecule test
+- molecule test
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
