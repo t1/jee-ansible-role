@@ -135,5 +135,6 @@
       with_items: "{{ lookup('file', molecule_instance_config) | molecule_from_yaml }}"
 
     - name: Wait for boot process to finish
+      # TODO there should be a smarter way than this
       pause:
         minutes: 2

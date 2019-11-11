@@ -40,8 +40,7 @@
     enabled: yes
   become: true
 
-#- name: wait for app server to start
-#  wait_for:
-#    path: '{{ application_server_log }}'
-#    search_regex: '{{ application_server_started_log_expression }}'
-#  become: true
+- name: wait for app server to start
+  wait_for:
+    path: '{{ application_server_log }}'
+    search_regex: '{{ application_server_started_log_expression }}'
