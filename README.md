@@ -1,4 +1,4 @@
-JEE-app-server
+JEE-app-server [![Build Status](https://travis-ci.org/t1/jee-ansible-role.svg?branch=master)](https://travis-ci.org/t1/jee-ansible-role)
 ==============
 
 [Ansible](https://docs.ansible.com/ansible/latest/index.html) role to provision a [Jakarta-EE](https://jakarta.ee) application server:
