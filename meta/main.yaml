@@ -9,8 +9,8 @@ galaxy_info:
   platforms:
     - name: Ubuntu
       versions: [ all ]
-    - name: Centos
-      versions: [ 6, 7, 8 ]
+    - name: GenericLinux
+      versions: [ all ]
 
   galaxy_tags:
     - jee
