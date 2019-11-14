@@ -39,9 +39,3 @@ def test_app_server_is_installed(host):
 
 def test_app_server_is_listening(host):
     assert host.socket('tcp://0.0.0.0:8080').is_listening
-
-
-# TODO reachable from the outside
-# def test_app_server_is_reachable(host):
-#     assert http localhost:8080 contains
-#     '<h3>Your WildFly instance is running.</h3>'

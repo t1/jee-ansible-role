@@ -44,3 +44,11 @@
   wait_for:
     path: '{{ application_server_log }}'
     search_regex: '{{ application_server_started_log_expression }}'
+
+- name: GET home page
+  action: uri url=http://localhost:8080 return_content=yes
+  register: home_page
+
+- name: check home page
+  fail: { msg: '{{ application_server_service_name }} is not happy (status {{ home_page.status }}):\n{{ home_page.content }}' }
+  when: "application_server_success_body not in home_page.content"

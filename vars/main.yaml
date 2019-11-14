@@ -9,6 +9,7 @@ application_server_home: /opt/wildfly
 application_server_user: wildfly
 application_server_group: wildfly
 application_server_service_name: wildfly
+application_server_success_body: '<h3>Your WildFly instance is running.</h3>'
 
 application_server_archive_expanded: 'wildfly-{{ wildfly_version }}'
 application_server_archive: '{{ application_server_archive_expanded }}.tar.gz'
