@@ -3,7 +3,6 @@
     state: directory
     name: /etc/wildfly
   become: true
-  become_user: wildfly
 
 - name: copy wildfly.conf file
   copy:
@@ -11,7 +10,6 @@
     src: '{{ application_server_systemd_scripts }}/wildfly.conf'
     dest: /etc/wildfly/
   become: true
-  become_user: wildfly
 
 - name: copy launch.sh
   copy:
@@ -22,7 +20,6 @@
     group: '{{ application_server_group }}'
     mode: '0750'
   become: true
-  become_user: wildfly
 
 - name: copy service
   copy:
@@ -30,13 +27,11 @@
     src: '{{ application_server_systemd_scripts }}/wildfly.service'
     dest: /etc/systemd/system/
   become: true
-  become_user: wildfly
 
 - name: systemd reload
   systemd:
     daemon_reload: yes
   become: true
-  become_user: wildfly
 
 - name: start app server
   service:
@@ -44,7 +39,6 @@
     state: started
     enabled: yes
   become: true
-  become_user: wildfly
 
 - name: wait for app server to start
   wait_for:
