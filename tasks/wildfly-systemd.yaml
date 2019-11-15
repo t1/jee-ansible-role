@@ -42,8 +42,7 @@
 
 - name: wait for app server to start
   wait_for:
-    path: '{{ application_server_log }}'
-    search_regex: '{{ application_server_started_log_expression }}'
+    port: 8080
 
 - name: GET home page
   action: uri url=http://localhost:8080 return_content=yes

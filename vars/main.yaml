@@ -17,8 +17,6 @@ application_server_download_url:
   '{{ wildfly_download_base_url }}/{{ wildfly_version }}/{{ application_server_archive }}'
 application_server_archive_checksum: '{{ wildfly_archive_checksum }}'
 application_server_start_script: '{{ application_server_home }}/bin/standalone.sh'
-application_server_log: '{{ application_server_home }}/standalone/log/server.log'
-application_server_started_log_expression: 'WildFly Full {{ wildfly_version }} .* started in \d+ms'
 
 application_server_scripts: '{{ application_server_home }}/docs/contrib/scripts'
 application_server_systemd_scripts: '{{ application_server_scripts }}/systemd'
