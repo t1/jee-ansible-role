@@ -2,11 +2,11 @@
 - name: Converge
   hosts: all
   roles:
-    - role: jee-ansible-role
+  - role: jee-ansible-role
 
   post_tasks:
-    - name: dump variables for test scripts to read
-      template:
-        src: templates/ansible-vars.yaml.j2
-        dest: /tmp/ansible-vars.yaml
-      changed_when: False
+  - name: dump variables for test scripts to read
+    template:
+      src: templates/ansible-vars.yaml.j2
+      dest: /tmp/ansible-vars.yaml
+    changed_when: False
