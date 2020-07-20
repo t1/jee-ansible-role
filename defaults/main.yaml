@@ -2,6 +2,6 @@
 # defaults file for jee-ansible-role
 java_version: 11
 
-wildfly_version: 18.0.0.Final
-wildfly_archive_checksum: sha1:2d4778b14fda6257458a26943ea82988e3ae6a66
+wildfly_version: 20.0.1.Final
+wildfly_archive_checksum: sha1:95366b4a0c8f2e6e74e3e4000a98371046c83eeb
 wildfly_download_base_url: http://download.jboss.org/wildfly
